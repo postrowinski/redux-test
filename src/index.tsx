@@ -4,4 +4,4 @@ import App from "./App";
 
 const rootEl: any = document.getElementById("root");
 
-render(<App/>, rootEl);
+render(<App />, rootEl);
