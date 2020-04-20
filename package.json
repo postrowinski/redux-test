@@ -1,20 +1,7 @@
 {
-  "name": "boiler_plate",
+  "name": "react_redux_tutorial",
   "version": "0.1.0",
-  "description": "Starter kit for React, Webpack (with Hot Module Replacement), Typescript and Babel.",
-  "keywords": [
-    "react",
-    "webpack",
-    "typescript",
-    "babel",
-    "sass",
-    "hmr",
-    "starter",
-    "boilerplate",
-    "antd",
-    "lodash",
-    "moment"
-  ],
+  "description": "react-redux tutorial",
   "scripts": {
     "build": "yarn run clean-dist && webpack -p --config=configs/webpack/prod.js",
     "clean-dist": "rimraf dist",

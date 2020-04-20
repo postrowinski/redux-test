@@ -2,7 +2,6 @@ import { combineReducers } from 'redux';
 import * as I from '../interfaces/interfaces';
 import { SELECT_SONG_TYPE } from '../interfaces/types';
 
-
 const songsReducer = (): I.Song[] => {
     return [
         { title: 'Dont speak', duration: '4:05'},
