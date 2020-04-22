@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux';
 import * as I from '../interfaces/interfaces';
-import { SELECT_SONG_TYPE } from '../interfaces/types';
+import { SELECT_SONG_TYPE, INCREMENT, DECREMENT } from '../interfaces/types';
 
 const songsReducer = (): I.Song[] => {
     return [
@@ -22,7 +22,22 @@ const selectedSongReducer = (selectedSong: I.Song = null, action: I.SelectSongAc
     }
 }
 
+const counterReducer = (count: number = 0, action: I.CounterAction) => {
+    console.log(count);
+    switch(action.type) {
+        case INCREMENT: {
+            return count + 1;
+        }
+        case DECREMENT: {
+            return count <= 0 ? 0 : count - 1;
+        }
+        default: count;
+    }
+    return 0;
+}
+
 export default combineReducers({
     songs: songsReducer,
-    selectedSong: selectedSongReducer
+    selectedSong: selectedSongReducer,
+    counter: counterReducer
 });

@@ -1,21 +1,22 @@
 import * as React from 'react';
 import { connect } from 'react-redux';
-import { Song } from '../../interfaces/interfaces';
+import { Song as ISong } from '../../interfaces/interfaces';
+import { Song } from '../Song/Song';
 
 interface Props {
-    songs: Song[];
+    songs: ISong[];
 }
 
 const SongListBody: React.FC<Props> = (props: Props): JSX.Element => {
-    console.log(props.songs);
+    const { songs } = props;
     return (
-        <div>
-            test
-        </div>
+        <ul className='song__list'>
+            {songs.map((song: ISong, index: number) => <Song song={song} key={index} />)}
+        </ul>
     )
 }
 
-const mapStateToProps = (state: Props) => {
+const mapStateToProps = (state: Props): Props => {
     return { songs: state.songs }
 }
 
